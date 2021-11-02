@@ -685,8 +685,8 @@ class VendorsController{
 						
 						$dataProduct = array(
 							
-							"approval_product" => "review",
-							"feedback_product" => "Your product is under review",
+							"approval_product" => "approved",
+							"feedback_product" => "Su producto está publicado",
 							"state_product" => "show",
 							"id_store_product" => $idStore,
 							"name_product" => TemplateController::capitalize($_POST["nameProduct"]),
