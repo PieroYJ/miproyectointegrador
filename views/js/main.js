@@ -3188,7 +3188,7 @@ function newOrder(methodPaid, statusPaid, idPayment, total){
 
                                 var action = "https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/";
                                 var merchantId = 508029;
-                                var accountId = 512321;
+                                var accountId = 512323;
                                 var referenceCode = Math.ceil(Math.random()*1000000);
                                 var apiKey = "4Vj8eK4rloUd272L48hsrarnUA";
                                 var signature = hex_md5(apiKey+"~"+merchantId+"~"+referenceCode+"~"+total+"~USD");
