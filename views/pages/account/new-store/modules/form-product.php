@@ -580,7 +580,7 @@ Crear Producto
                     <input 
                     type="text"
                     class="form-control"
-                    placeholder="Ex: Shop now"
+                    placeholder="Ex: Comprar ahora"
                     name="topBannerButtonTag"
                     pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
                     maxlength="50"
@@ -836,7 +836,7 @@ Crear Producto
 
                     <input type="text"
                     class="form-control"
-                    placeholder="Ex: Shop now"
+                    placeholder="Ex: Comprar ahora"
                     name="hSliderButtonTag"
                     pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
                     maxlength="50"

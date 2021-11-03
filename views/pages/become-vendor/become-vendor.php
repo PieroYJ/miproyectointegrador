@@ -30,7 +30,7 @@ Become a Vendor Content
 
     <div class="ps-vendor-banner bg--cover" style="background: url(img/vendor/vendor.jpg);">
         <div class="container">
-            <h2>Millions Of Shoppers Can’t Wait To See What You Have In Store</h2><a class="ps-btn ps-btn--lg" href="/account&login">Start Selling</a>
+            <h2>Millones De Compradores no puedo Esperar A Ver Lo Que Tienen En la Tienda</h2><a class="ps-btn ps-btn--lg" href="/account&login">Empezar a vender</a>
         </div>
     </div>
 

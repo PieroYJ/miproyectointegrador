@@ -16,9 +16,9 @@
 
             <ul class="navigation__extra">
                 
-                <li><a href="/become-vendor">Sell on MarketPlace</a></li>
+                <li><a href="/become-vendor">Vender</a></li>
                 <li><a href="/store-list">Store List</a></li>
-                <li><i class="icon-telephone"></i> Hotline:<strong> 1-800-234-5678</strong></li>    
+                <li><i class="icon-telephone"></i> Whatsapp: <strong> 944-254-589</strong></li>    
 
                 <li>
 
