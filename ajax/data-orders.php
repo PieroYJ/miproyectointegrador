@@ -239,7 +239,7 @@ class DataTableController{
 
                 if($value->status_order == 'pending'){
 
-                    $process_order .= "<a class='btn btn-warning btn-lg nextProcess' idOrder='".$value->id_order."' processOrder='".base64_encode($value->process_order)."' clientorder='".$client_order."' emailOrder='".$email_order."' productOrder='".$product_order."'>Next Process</a>";
+                    $process_order .= "<a class='btn btn-primary btn-lg nextProcess' idOrder='".$value->id_order."' processOrder='".base64_encode($value->process_order)."' clientorder='".$client_order."' emailOrder='".$email_order."' productOrder='".$product_order."'>Next Process</a>";
 
                 }
 
