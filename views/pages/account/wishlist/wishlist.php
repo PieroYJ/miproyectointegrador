@@ -79,7 +79,7 @@ if(!isset($_SESSION["user"])){
                 <ul class="ps-section__links">
                     <li  class="active"><a href="<?php echo $path ?>account&wishlist">My Wishlist</a></li>
                     <li><a href="<?php echo $path ?>account&my-shopping">My Shopping</a></li>
-                    <li><a href="<?php echo $path ?>account&my-store">My Store</a></li>
+                    <li><a href="<?php echo $path ?>account&my-store">Mis ventas</a></li>
                     <li><a href="<?php echo $path ?>account&my-sales">My Sales</a></li>
                 </ul>
 

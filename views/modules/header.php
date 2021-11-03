@@ -63,9 +63,9 @@ if(isset($_SESSION["user"])){
 
             <div class="header__right">
                 <ul class="header__top-links"> 
-                    <li><a href="/become-vendor">Sell on MarketPlace</a></li>
-                    <li><a href="/store-list">Store List</a></li>
-                    <li><i class="icon-telephone"></i> Hotline:<strong> 1-800-234-5678</strong></li>                     
+                    <li><a href="/become-vendor">Deseo Vender</a></li>
+                   <!--====== <li><a href="/store-list">Store List</a></li>==-->
+                    <li><i class="icon-telephone"></i> Whatsapp:<strong> 944-254-366</strong></li>                     
                     <li>
                         <div class="ps-dropdown language">
                             <a class="btn" onclick="changeLang('en')">
@@ -198,7 +198,7 @@ if(isset($_SESSION["user"])){
 
                 <form class="ps-form--quick-search">
                   
-                    <input class="form-control inputSearch" type="text" placeholder="I'm shopping for...">
+                    <input class="form-control inputSearch" type="text" placeholder="Hoy deseo comprar...">
 
                     <button type="button" class="btnSearch" path="<?php echo $path ?>">Search</button>
 
