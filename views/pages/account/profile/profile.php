@@ -166,7 +166,7 @@ if($responseStore->status == 200){
 
             <?php if ($_SESSION["user"]->method_user == "direct"): ?>
 
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword">cambio de contraseña</button>
+                <button class="btn btn-pr btn-lg" data-toggle="modal" data-target="#changePassword">cambio de contraseña</button>
                 
             <?php endif ?>
 
