@@ -161,8 +161,15 @@ if($responseStore->status == 200){
             <h2 class="text-white"><?php echo $_SESSION["user"]->displayname_user ?></h2>
 
             <p><i class="fas fa-user"></i> <?php echo $_SESSION["user"]->username_user ?></p>
-
             <p><i class="fas fa-envelope"></i> <?php echo $_SESSION["user"]->email_user ?></p>
+            <p><i class="fas fa-map"></i> <?php echo $_SESSION["user"]->ubigeo ?></p>
+            <?php if (is_array($_SESSION["user"]->phones)) {
+                foreach ($_SESSION["user"]->phones as $phone) : ?>
+                <p><i class="fas fa-phone"></i> <?php echo $phone ?></p>
+            <?php endforeach;
+            }else{ ?>
+                <p><i class="fas fa-phone"></i> <?php echo $_SESSION["user"]->phones ?></p>
+            <?php } ?>
 
             <?php if ($_SESSION["user"]->method_user == "direct"): ?>
 
