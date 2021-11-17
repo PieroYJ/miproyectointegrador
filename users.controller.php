@@ -22,70 +22,85 @@ class UsersController{
 			     preg_match( '/^[#\\=\\$\\;\\*\\_\\?\\¿\\!\\¡\\:\\.\\,\\0-9a-zA-Z]{1,}$/', $_POST["regPassword"] )
 			){
 
-				$displayname = TemplateController::capitalize(strtolower($_POST["regFirstName"]))." ".TemplateController::capitalize(strtolower($_POST["regLastName"]));
-				$username = strtolower(explode("@",$_POST["regEmail"])[0]);
-				$email =  strtolower($_POST["regEmail"]);
+				if ($_POST["regPhone1"] == $_POST["regPhone2"] || $_POST["regPhone1"] == $_POST["regPhone3"] || $_POST["regPhone2"] == $_POST["regPhone3"]) 
+				{
+					echo '<div class="alert alert-danger">The phone numbers must be different each other</div>
+					<script>fncFormatInputs()</script>';
+				}
+				else
+				{
+					$displayname = TemplateController::capitalize(strtolower($_POST["regFirstName"]))." ".TemplateController::capitalize(strtolower($_POST["regLastName"]));
+					$username = strtolower(explode("@",$_POST["regEmail"])[0]);
+					$email =  strtolower($_POST["regEmail"]);
 
-				$url = CurlController::api()."users?register=true";
-				$method = "POST";
-				$fields = array(
+					$url = CurlController::api()."users?register=true";
+					$method = "POST";
+					$fields = array(
 
-					"rol_user" => "default",
-					"displayname_user" => $displayname,
-					"username_user" => $username,
-					"email_user" => $email,
-					"password_user" => $_POST["regPassword"],
-					"method_user" => "direct",
-					"date_created_user" => date("Y-m-d")
+						"rol_user" => "default",
+						"displayname_user" => $displayname,
+						"username_user" => $username,
+						"email_user" => $email,
+						"id_country" => $_POST["regCountry"],
+						"phone1" => $_POST["regPhone1"],
+						"phone2" => $_POST["regPhone2"],
+						"phone3" => $_POST["regPhone3"],
+						"password_user" => $_POST["regPassword"],
+						"method_user" => "direct",
+						"date_created_user" => date("Y-m-d")
 
-				);
+					);
 
-				$header = array(
+					if ($_POST["regDistrict"] != '') 
+						$fields["id_district"] = $_POST["regDistrict"];
 
-				   "Content-Type" =>"application/x-www-form-urlencoded"
+					$header = array(
 
-				);
+					   "Content-Type" =>"application/x-www-form-urlencoded"
 
-				$register = CurlController::request($url, $method, $fields, $header);
+					);
 
-				if($register->status == 200){
+					$register = CurlController::request($url, $method, $fields, $header);
 
-					$name = $displayname;
-					$subject = "Verifica tu cuenta";
-					$email = $email;
-					$message = "Debemos verificar su cuenta para que pueda ingresar a nuestro Marketplace";
-					$url = TemplateController::path()."account&login&".base64_encode($email);
+					if($register->status == 200){
 
-					$sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
+						$name = $displayname;
+						$subject = "Verifica tu cuenta";
+						$email = $email;
+						$message = "Debemos verificar su cuenta para que pueda ingresar a nuestro Marketplace";
+						$url = TemplateController::path()."account&login&".base64_encode($email);
 
-					if($sendEmail == "ok"){
+						$sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
 
-						echo '<div class="alert alert-success">Usuario registrado correctamente, confirme su cuenta en su correo electrónico (marque spam)</div>
+						if($sendEmail == "ok"){
 
-						<script>
+							echo '<div class="alert alert-success">Usuario registrado correctamente, confirme su cuenta en su correo electrónico (marque spam)</div>
 
-							fncFormatInputs()
+							<script>
 
-						</script>
+								fncFormatInputs()
 
-						';
+							</script>
 
-					}else{
+							';
 
-						echo '<div class="alert alert-danger">'.$sendEmail.'</div>
+						}else{
 
-						<script>
+							echo '<div class="alert alert-danger">'.$sendEmail.'</div>
 
-							fncFormatInputs()
+							<script>
 
-						</script>
+								fncFormatInputs()
 
-						';	
+							</script>
+
+							';	
+
+						}
 
 					}
-
 				}
-				
+
 			}else{
 
 				echo '<div class="alert alert-danger">Error in the syntax of the fields</div>
