@@ -101,6 +101,11 @@
      <?php endif ?>
 
     <div class="ps-product__desc">
+    <?php 
+        $prodCtrl = new ProductsController();
+        $salesHistory = $prodCtrl->getSalesRef($item->id_product);        
+        
+        ?>
 
         <p> 
 
@@ -125,6 +130,20 @@
             <?php endif ?>
 
         </p>
+
+        <?php if (count($salesHistory) > 0) { ?>
+        <p>
+            <a onclick="showSalesHistory()" style="font-size: 1.2rem; cursor: pointer;">* Sales history *</a>
+            <ul id="sales-history" class="list-group" hidden="true">
+                <?php foreach ($salesHistory as $row) : ?>
+                    <li class="list-group-item">
+                        <span class="badge"><?=$row['user']?></span>
+                        Received: <?=$row['datetime']?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </p>
+        <?php } ?>
 
         <!--=====================================
         Resumen del producto
@@ -408,3 +427,19 @@
     </div>
 
 </div> <!-- End Product Info -->
+
+<script type="text/javascript">
+    function showSalesHistory()
+    {
+        var attr = $("#sales-history").attr('hidden');
+        
+        if (typeof attr !== 'undefined' && attr !== false) 
+        {
+            $("#sales-history").removeAttr('hidden');
+        }
+        else
+        {
+            $("#sales-history").attr('hidden', 'true');
+        }
+    }
+</script>

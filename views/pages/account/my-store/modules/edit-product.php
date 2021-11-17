@@ -670,7 +670,7 @@ Editar Producto
                         <input 
                         type="text"
                         class="form-control"
-                        placeholder="Ex: Sale2019"
+                        placeholder="Ex: Sale2021"
                         name="topBannerSpanTag"
                         pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
                         maxlength="50"
