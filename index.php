@@ -8,6 +8,7 @@ require_once "controllers/template.controller.php";
 require_once "controllers/curl.controller.php";
 require_once "controllers/users.controller.php";
 require_once "controllers/vendors.controller.php";
+require_once "controllers/products.controller.php";
 
 require "extensions/vendor/autoload.php";
 
