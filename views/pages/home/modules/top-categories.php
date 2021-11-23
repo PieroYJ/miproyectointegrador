@@ -17,7 +17,7 @@ $topCategories = CurlController::request($url, $method, $fields, $header)->resul
 Preload
 ======================================-->
 
-<div class="container-fluid preloadTrue">
+<!-- <div class="container-fluid preloadTrue">
     
      <div class="container">
     
@@ -57,13 +57,13 @@ Preload
 
     </div>
 
-</div>
+</div> -->
 
 <!--=====================================
 Load
 ======================================-->
 
-<div class="ps-top-categories preloadFalse">
+<!-- <div class="ps-top-categories preloadFalse">
 
     <div class="container">
 
@@ -86,4 +86,4 @@ Load
         </div>
     </div>
 
-</div><!-- End Top Categories -->
+</div>End Top Categories -->
