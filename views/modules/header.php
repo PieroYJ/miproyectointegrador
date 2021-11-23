@@ -208,12 +208,12 @@ if(isset($_SESSION["user"])){
                     Wishlist
                     ======================================-->
 
-                    <a class="header__extra" href="<?php echo $path ?>account&wishlist">
+                    <!-- <a class="header__extra" href="<?php echo $path ?>account&wishlist">
                         <i class="icon-heart"></i>
                         <span>
                             <i class="totalWishlist"><?php echo count($wishlist) ?></i>
                         </span>
-                    </a>
+                    </a> -->
 
                     <!--=====================================
                     Cart
