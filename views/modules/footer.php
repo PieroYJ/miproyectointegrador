@@ -8,7 +8,7 @@
 
         <div class="ps-footer__copyright">
 
-            <p>© 2020 MarketPlace. All Rights Reserved</p>
+            <p>© 2021 Cibertec. informáticos del centro todos los derechos reservados.</p>
 
             <p>
             	<span>We Using Safe Payment For:</span>
