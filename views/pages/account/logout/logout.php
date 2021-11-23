@@ -10,3 +10,4 @@ window.location = "'.$path.'account&login";
 
 </script>';
 
+
