@@ -11,8 +11,8 @@ $randomProduct = CurlController::request($url, $method, $fields, $header)->resul
 $topBanner = json_decode($randomProduct->top_banner_product, true);
 
 ?>
-
-<div class="ps-block--promotion-header bg--cover"  style="background: url(img/products/<?php echo $randomProduct->url_category ?>/top/<?php echo $topBanner["IMG tag"] ?>);">
+<!-- bannerEdit -->
+<!-- <div class="ps-block--promotion-header bg--cover"  style="background: url(img/products/<?php echo $randomProduct->url_category ?>/top/<?php echo $topBanner["IMG tag"] ?>);">
     <div class="container">
         <div class="ps-block__left">
             <h3><?php echo $topBanner["H3 tag"] ?></h3>
@@ -25,4 +25,4 @@ $topBanner = json_decode($randomProduct->top_banner_product, true);
             <p><?php echo $topBanner["P2 tag"] ?><span><?php echo $topBanner["Span tag"] ?></span></p>
         </div><a class="ps-btn ps-btn--sm" href="<?php echo $path.$randomProduct->url_product ?>"><?php echo $topBanner["Button tag"] ?></a>
     </div>
-</div>
+</div> -->

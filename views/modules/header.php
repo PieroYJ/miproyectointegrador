@@ -67,7 +67,7 @@ if(isset($_SESSION["user"])){
                    <!--====== <li><a href="/store-list">Store List</a></li>==-->
                     <li><i class="icon-telephone"></i> Whatsapp:<strong> 944-254-366</strong></li>                     
                     <li>
-                        <div class="language">
+                        <div class="language" class="auto" id="auto" style="display: none">
                         <a class="btn" onclick="changeLang('es')">
                                         <img src="img/template/es.png" alt=""> Spanish</a>
                             

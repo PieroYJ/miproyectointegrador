@@ -22,7 +22,7 @@ class DataTableController{
 
             $orderType = $_POST['order'][0]['dir']; // Obtener el orden ASC o DESC
 
-            $start  = $_POST["start"];//Indicador de primer registro de paginación.
+            $start  = $_POST["start"];//Indicador de primer registro de paginación.[0]
 
             $length = $_POST['length'];//Indicador de la longitud de la paginación.
 
@@ -30,7 +30,7 @@ class DataTableController{
             Traer el total de la data de órdenes
             =============================================*/
 
-            $select = "id_order";
+            $select = "id_order";/*selecciona solo el id*/
 
             $url = CurlController::api()."orders?linkTo=id_store_order&equalTo=".$_GET["idStore"]."&select=".$select."&token=".$_GET["token"];
 

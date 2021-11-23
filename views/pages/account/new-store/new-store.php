@@ -25,10 +25,10 @@ My Account Content
             <div class="ps-section__content">
 
                 <ul class="ps-section__links">
-                    <li><a href="<?php echo $path ?>account&wishlist">My Wishlist</a></li>
+                    <!-- <li><a href="<?php echo $path ?>account&wishlist">My Wishlist</a></li> -->
                     <li><a href="<?php echo $path ?>account&my-shopping">My Shopping</a></li>
                     <li class="active"><a href="<?php echo $path ?>account&my-store"> Mis ventas</a></li>
-                    <li><a href="<?php echo $path ?>account&my-sales">My Sales</a></li>
+                    <!-- <li><a href="<?php echo $path ?>account&my-sales">My Sales</a></li> -->
                 </ul>
 
                 <!--=====================================

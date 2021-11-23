@@ -41,7 +41,7 @@ Preload
 Load
 ======================================-->
 
-<div class="ps-promotions preloadFalse">
+<!-- <div class="ps-promotions preloadFalse">
 
     <div class="container">
 
@@ -61,4 +61,4 @@ Load
 
     </div>
 
-</div><!-- End Home Promotions-->
+</div>  !-- End Home Promotions--> <!---->
