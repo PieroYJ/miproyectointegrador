@@ -1,4 +1,4 @@
-<div class="ps-newsletter">
+<!-- <div class="ps-newsletter">
 
     <div class="container">
 
@@ -34,4 +34,4 @@
 
     </div>
 
-</div>
+</div> -->

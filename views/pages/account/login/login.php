@@ -223,10 +223,10 @@ Ventana modal para recuperar contraseña
 
             </div>
 
-
+        
         </form>
 
-
+        
       </div>
 
       <!-- Modal footer -->

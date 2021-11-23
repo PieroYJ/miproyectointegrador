@@ -201,7 +201,7 @@ if($responseStore->status == 200){
                 </div>
             </div><!-- box /-->
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6" style="height: 0px;overflow: hidden;">
                 <div class="text-center">
                     <a href="<?php echo TemplateController::path() ?>account&my-store&disputes">
                         <h1><i class="fas fa-bell text-white"></i></h1>
@@ -210,7 +210,7 @@ if($responseStore->status == 200){
                 </div>
             </div><!-- box /-->
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6" style="height: 0px;overflow: hidden;">
                 <div class="text-center">
                     <a href="<?php echo TemplateController::path() ?>account&my-store&messages">
                         <h1><i class="fas fa-comments text-white"></i></h1>
