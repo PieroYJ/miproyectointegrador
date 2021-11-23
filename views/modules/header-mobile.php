@@ -23,20 +23,9 @@
                 <li>
 
                     <div class="ps-dropdown language">
-                        <a class="btn" onclick="changeLang('en')">
-                            <img src="img/template/en.png" alt="">English
-                        </a>
-
-                        <ul class="ps-dropdown-menu">
-
-                            <li>
-                                <a class="btn" onclick="changeLang('es')">
+                    <a class="btn" onclick="changeLang('es')">
                                     <img src="img/template/es.png" alt=""> Español
-                                </a>
-                            </li>
-
-                        </ul>
-
+                                </a>                    
                     </div>
 
                 </li>
