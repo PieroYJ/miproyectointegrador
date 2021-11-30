@@ -162,7 +162,15 @@ if($responseStore->status == 200){
 
             <p><i class="fas fa-user"></i> <?php echo $_SESSION["user"]->username_user ?></p>
             <p><i class="fas fa-envelope"></i> <?php echo $_SESSION["user"]->email_user ?></p>
-            <p><i class="fas fa-map"></i> <?php echo $_SESSION["user"]->ubigeo ?></p>
+            <p>
+                <i class="fas fa-map"></i> 
+                <?php if (!empty($_SESSION["user"]->location)) { ?>
+                    <a  data-toggle="modal" data-target="#map_modal" 
+                        style="text-decoration: underline; cursor: pointer;">
+                        <?php echo $_SESSION["user"]->ubigeo ?>
+                    </a>
+                <?php } else { echo $_SESSION["user"]->ubigeo; } ?>
+            </p>
             <?php if (is_array($_SESSION["user"]->phones)) {
                 foreach ($_SESSION["user"]->phones as $phone) : ?>
                 <p><i class="fas fa-phone"></i> <?php echo $phone ?></p>
@@ -201,7 +209,7 @@ if($responseStore->status == 200){
                 </div>
             </div><!-- box /-->
 
-            <div class="col-lg-3 col-6" style="height: 0px;overflow: hidden;">
+            <div class="col-lg-3 col-6">
                 <div class="text-center">
                     <a href="<?php echo TemplateController::path() ?>account&my-store&disputes">
                         <h1><i class="fas fa-bell text-white"></i></h1>
@@ -210,7 +218,7 @@ if($responseStore->status == 200){
                 </div>
             </div><!-- box /-->
 
-            <div class="col-lg-3 col-6" style="height: 0px;overflow: hidden;">
+            <div class="col-lg-3 col-6">
                 <div class="text-center">
                     <a href="<?php echo TemplateController::path() ?>account&my-store&messages">
                         <h1><i class="fas fa-comments text-white"></i></h1>
@@ -362,3 +370,46 @@ Ventana modal para cambiar fotografía
     </div>
   </div>
 </div>
+
+<div class="modal fade bd-example-modal-lg" id="map_modal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ubicaci&oacute;n del usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="map" style="height: 600px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDem3bUZsiTHum6oQxwiyJdk6GQ44u8UHY"></script>
+<script type="text/javascript">
+<?php 
+if (!empty($_SESSION["user"]->location)) 
+{
+    $latLng = explode(',', $_SESSION["user"]->location);
+?>
+    $(function(){ initMap(); });
+
+    function initMap() 
+    {
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: <?=$latLng[0]?>, lng: <?=$latLng[1]?>},
+            zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: <?=$latLng[0]?>, lng: <?=$latLng[1]?>},
+            map: map,
+        });
+    }
+<?php } ?>
+</script>

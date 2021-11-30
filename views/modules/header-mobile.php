@@ -359,7 +359,7 @@
                             <i class="icon-user"></i>
                         </div>
                         <div class="ps-block__right">
-                            <a href="<?php echo $path ?>account&login">Login</a>
+                            
                             <a href="<?php echo $path ?>account&enrollment">Register</a>
                         </div>
                     </div>

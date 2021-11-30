@@ -128,7 +128,7 @@ if(count($hotProducts)>10){
     Load
     ======================================-->
 
-    <div class="ps-block--deal-hot preloadFalse2" data-mh="dealhot">
+    <div class="ps-block--deal-hot preloadFalse2" data-mh="dealhot" style="opacity: 1; height: auto;width: 1200px;">
 
         <div class="ps-block__header">
 

@@ -120,6 +120,14 @@
                                     <div class="valid-feedback">Valid.</div>
                                     <div class="invalid-feedback">Please select an option correctly.</div>
                                 </div>
+                                <div class="form-group text-center">
+                                    <button type="button" class="ps-btn ps-btn--sm ps-btn--outline" data-toggle="modal" data-target="#map_modal">
+                                        <i class="fa fa-map"></i> Seleccionar ubicación
+                                    </button>
+                                    <input type="hidden" id="location" name="location">
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Please select a location correctly.</div>
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -235,21 +243,44 @@
 
     </div>
 
+    <div class="modal fade bd-example-modal-lg" id="map_modal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Click sobre la ubicaci&oacute;n</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="map" style="height: 600px;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDem3bUZsiTHum6oQxwiyJdk6GQ44u8UHY"></script>
     <script type="text/javascript">
+        $(function(){ initMap(); });
+
         var provinces = <?=$ubiCtrl->getProvinces('', true)?>;
         var districts = <?=$ubiCtrl->getDistricts('', true)?>;
+        var marker;
 
         function showUbiPeru(countryId)
         {
             if (countryId == 1) 
             {
                 $("#ubiperu").removeAttr('hidden');
-                $("#regDepartment, #regProvince, #regDistrict").attr('required', 'true');
+                $("#regDepartment, #regProvince, #regDistrict, #location").attr('required', 'true');
             }
             else
             {
                 $("#ubiperu").attr('hidden', 'true');
-                $("#regDepartment, #regProvince, #regDistrict").removeAttr('required');
+                $("#regDepartment, #regProvince, #regDistrict, #location").removeAttr('required');
             }
         }
 
@@ -275,17 +306,40 @@
                 );
             }
         }
+
+        function initMap() 
+        {
+            let map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -12.046, lng: -77.031},
+                zoom: 13
+            });
+
+            map.addListener("click", (e) => {
+                placeMarkerAndPanTo(e.latLng, map);
+            });
+        }
+
+        function placeMarkerAndPanTo(latLng, map) {
+            map.panTo(latLng);
+
+            if (marker == null)
+            {
+                marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                });
+            } 
+            else 
+            {
+                marker.setPosition(latLng); 
+            } 
+
+            Swal.fire(
+                'Coordenadas guardadas',
+                'Latitud: ' + marker.getPosition().lat() + '<br>Longitud: ' + marker.getPosition().lng(),
+                'success'
+            );
+
+            $("#location").val(marker.getPosition().lat() + ',' + marker.getPosition().lng());
+        }
     </script>
-    <script>
-  window.watsonAssistantChatOptions = {
-    integrationID: "f8d7eed0-1c0e-4b41-9b44-22d3088445d9", // The ID of this integration.
-    region: "us-south", // The region your integration is hosted in.
-    serviceInstanceID: "61508122-c4cc-4bb4-adaf-417d75ab8944", // The ID of your service instance.
-    onLoad: function(instance) { instance.render(); }
-  };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-    document.head.appendChild(t);
-  });
-</script>

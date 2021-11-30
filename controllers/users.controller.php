@@ -52,7 +52,10 @@ class UsersController{
 					);
 
 					if ($_POST["regDistrict"] != '') 
+					{
 						$fields["id_district"] = $_POST["regDistrict"];
+						$fields["location"] = $_POST["location"];
+					}
 
 					$header = array(
 
