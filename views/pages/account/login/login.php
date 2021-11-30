@@ -60,13 +60,7 @@
 
             <ul class="ps-tab-list">
 
-                <li class="active">
-                    <p><a href="<?php echo $path ?>account&login">Login</a></p>
-                </li>
-
-                <li class="">
-                    <p><a href="<?php echo $path ?>account&enrollment">Register</a></p>
-                </li>
+                
 
             </ul>
 

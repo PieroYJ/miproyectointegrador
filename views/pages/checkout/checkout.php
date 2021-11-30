@@ -7,7 +7,7 @@ if(!isset($_SESSION["user"])){
         fncSweetAlert(
                 "error",
                 "Please login",
-                "'.$path.'account&login"
+                "'.$path.'s"
             );
 
     </script>'; 
